@@ -6,6 +6,7 @@ from Table import Table
 from Deck import Deck
 import os
 import copy
+from pathlib import Path
 
 #const defining the font type and size
 LARGE_FONT= ("Verdana", 16)
@@ -90,7 +91,8 @@ class LoadGame(Frame):
         label.pack(pady=10,padx=10)
         self.fileName=""
 
-        fileList = os.listdir("/home/rshresth/00OPL/rshresth_python/src/serializationTest/")
+        mypath = str(Path().absolute())+'\\serializationTest'
+        fileList = os.listdir(mypath)
 
         for file in fileList:
             button = Button(self,text=file, command=lambda x=file:self.setFileName(x))
@@ -103,7 +105,7 @@ class LoadGame(Frame):
         buttonLoad.pack()
 
     def setFileName(self, fileName):
-        self.fileName = "/home/rshresth/00OPL/rshresth_python/src/serializationTest/"+fileName
+        self.fileName = str(Path().absolute())+'\\serializationTest\\'+fileName
         #print(self.fileName)
     def getFileName(self):
         return self.fileName
