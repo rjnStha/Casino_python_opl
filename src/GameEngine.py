@@ -672,7 +672,7 @@ class GameEngine:
 	def saveGame(self,fileName):
 
 		#add .txt and path to the user input file name
-		pathFileName = "/home/rshresth/00OPL/rshresth_python/src/serializationTest/"
+		pathFileName = str(Path().absolute())+'\\serializationTest\\'
 		pathFileName += fileName + ".txt"
 
 		print(pathFileName)
